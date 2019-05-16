@@ -1,1 +1,246 @@
-/* Compile your LESS file! */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Set every element's box-sizing to border-box */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+/* Mixins*/
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 15px;
+  margin-top: 25px;
+}
+.bubble {
+  padding: 50px;
+  color: white;
+  margin: 15px;
+  border: 1px solid none;
+  border-radius: 30%;
+}
+.container {
+  /*Variables*/
+  /*Header is everything above the image*/
+  width: 1000px;
+  margin: 0 auto;
+  /*This is my image of the beach that matches the portfolio for smooth transitions.*/
+  /*Main content is everything below the image, this is all the intro, skills, work history*/
+  /* Here is my mobile site*/
+}
+.container header nav {
+  display: flex;
+  justify-content: space-evenly;
+  gheight: 50px;
+  padding: 10px 35px;
+}
+.container header nav a {
+  text-decoration: none;
+  color: #15ff00;
+  font-size: 1.2rem;
+  font-family: roboto;
+}
+.container .Beach {
+  padding: 45px;
+  width: 100%;
+  max-height: 400px;
+}
+.container .main {
+  color: rebeccapurple;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.container .main a {
+  font-size: 2rem;
+}
+.container .main p {
+  font-size: 1.4rem;
+  padding: 15px;
+}
+.container .main .introduction {
+  background: red;
+  padding: 50px;
+  color: white;
+  margin: 15px;
+  border: 1px solid none;
+  border-radius: 30%;
+}
+.container .main .workhistory {
+  background: green;
+  padding: 50px;
+  color: white;
+  margin: 15px;
+  border: 1px solid none;
+  border-radius: 30%;
+}
+.container .main .skills {
+  background: orange;
+  padding: 50px;
+  color: white;
+  margin: 15px;
+  border: 1px solid none;
+  border-radius: 30%;
+}
+.container .main .contact {
+  padding: 50px;
+  color: white;
+  background: orchid;
+  border: 1px solid none;
+  border-radius: 30%;
+}
+.container .main .contact p {
+  padding: 0px;
+}
+@media (max-width: 500px) {
+  .container .main {
+    max-width: 500px;
+    color: white;
+  }
+  .container .main a {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+  .container .main p {
+    font-size: 1rem;
+    text-align: center;
+  }
+  .container .Beach {
+    width: 500px;
+  }
+  .container header nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 15px;
+    margin-top: 25px;
+  }
+}
