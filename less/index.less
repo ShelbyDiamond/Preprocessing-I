@@ -4,56 +4,239 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+html,
+body {
+  height: 100%;
+}
+/* Mixins*/
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 15px;
+  margin-top: 25px;
 }
 
+.bubble {
+  padding: 50px;
+  color: white;
+  margin: 15px;
+  border: 1px solid none;
+  border-radius: 30%;
+}
+.container {
+  /*Variables*/
+  @main-text: rebeccapurple;
+  @anchor: #15ff00;
+  /*Header is everything above the image*/
+  width: 1000px;
+  margin: 0 auto;
+  header {
+    nav {
+      display: flex;
+      justify-content: space-evenly;
+      height: 50px;
+      padding: 10px 35px;
+      a {
+        text-decoration: none;
+        color: @anchor;
+        font-size: 1.2rem;
+        font-family: roboto;
+      }
+    }
+  }
+  /*This is my image of the beach that matches the portfolio for smooth transitions.*/
+  .Beach {
+    padding: 45px;
+    width: 100%;
+    max-height: 400px;
+  }
+  /*Main content is everything below the image, this is all the intro, skills, work history*/
+  .main {
+    color: @main-text;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    a {
+      font-size: 2rem;
+    }
+    p {
+      font-size: 1.4rem;
+      padding: 15px;
+    }
+    .introduction {
+      background: blueviolet;
+      .bubble();
+    }
+
+    .workhistory {
+      background: green;
+      .bubble();
+    }
+    .skills {
+      background: orange;
+      .bubble();
+    }
+    .contact {
+      padding: 50px;
+      color: white;
+      background: orchid;
+      border: 1px solid none;
+      border-radius: 30%;
+      p {
+        padding: 0px;
+      }
+    }
+  }
+  /* Here is my mobile site*/
+  @media (max-width: 500px) {
+    .main {
+      max-width: 500px;
+      color: white;
+      a {
+        font-size: 1.4rem;
+        text-align: center;
+      }
+      p {
+        font-size: 1rem;
+        text-align: center;
+      }
+    }
+    .Beach {
+      width: 500px;
+    }
+    header {
+      nav {
+        .mobile-nav();
+      }
+    }
+  }
+}
